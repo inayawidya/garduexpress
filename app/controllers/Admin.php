@@ -2,24 +2,16 @@
 
 class Admin extends Controller
 {
-    public function index($ongkir=NULL)
+    public function index($ongkir = NULL, $cekresi = NULL)
     {
-    //var_dump($ongkir);
-    //die;
         $this->view('common/header');
         $this->view('admin/index', false, array(
-            'ongkir' => $ongkir));
+            "ongkir" => $ongkir,
+            "resi" => $cekresi
+        ));
         $this->view('common/footer');
     }
-    public function index2($ongkir)
-    {
-    //var_dump($ongkir);
-    //die;
-        $this->view('common/header');
-        $this->view('admin/index', false, array(
-            'ongkir' => $ongkir));
-        $this->view('common/footer');
-    }
+    
     public function login()
     {
         $this->view('common/header_login');
@@ -51,10 +43,6 @@ class Admin extends Controller
         $this->view('common/footer');
     }
     public function cektarif(){
-        //var_dump($_POST);
-        //die();
-
-        //Check for post
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             //Sanitize post data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -66,32 +54,33 @@ class Admin extends Controller
             ];
    
                 $cektarif = $this->model('Account_model')->cektarif($data);
-                // var_dump($cektarif[0]['harga']);
-                // die();
                 $harga = $cektarif[0]['harga'];
-                //$this->redirect("Admin", "index", $harga);
-                if ($_POST['berat']==1) {
-                    $ongkir = 1*$harga;
-                    $this->index($ongkir);
-                }
-                elseif ($_POST['berat']==2){
-                    $ongkir = 2*$harga;
-                }
-                elseif ($_POST['berat']==3){
-                    $ongkir = 3*$harga;
-                }
-                elseif ($_POST['berat']==4){
-                    $ongkir = 4*$harga;
-                }
-                elseif ($_POST['berat']==5){
-                    $ongkir = 5*$harga;
-                }
-                elseif ($_POST['berat']>5){
-                    $ongkir = 5*$harga;            
-                }
-                else echo 'input salah';
-    
+                $this->index($harga);
+        }        
+    }
 
+    public function cekresiProses(){
+        var_dump($_POST['resi']);
+        die();
+
+        //Check for post
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //Sanitize post data
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $data = [
+                'resi' => trim($_POST['resi']),
+            ];
+   
+                $cekresi = $this->model('Account_model')->cekresi($data);
+                if($cekresi = TRUE){
+                    $this->index($cekresi);
+                }
+                else{
+                    echo "Tidak ada resi tersebut";
+                }
+                //var_dump($cekresi);
+                //die();
         }        
     }
 }

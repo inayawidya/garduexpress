@@ -149,67 +149,6 @@ class Account extends Controller
         $this->redirect("Admin", "Index");
     }
 
-    public function cektarif(){
-        //var_dump($_POST);
-        //die();
 
-        //Check for post
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            //Sanitize post data
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-            $data = [
-                'asal' => trim($_POST['asal']),
-                'tujuan' => trim($_POST['tujuan']),
-                'berat' => trim($_POST['berat'])
-            ];
-   
-                $cektarif = $this->model('Account_model')->cektarif($data);
-                // var_dump($cektarif[0]['harga']);
-                // die();
-                $harga = $cektarif[0]['harga'];
-                $this->redirect("Admin", "index", $harga);
-                // if ($_POST['berat']==1) {
-                //     $ongkir = 1*$harga;
-                //     $this->redirect("Admin", "index", $ongkir);
-                // }
-                // elseif ($_POST['berat']==2){
-                //     $ongkir = 2*$harga;
-                // }
-                // elseif ($_POST['berat']==3){
-                //     $ongkir = 3*$harga;
-                // }
-                // elseif ($_POST['berat']==4){
-                //     $ongkir = 4*$harga;
-                // }
-                // elseif ($_POST['berat']==5){
-                //     $ongkir = 5*$harga;
-                // }
-                // elseif ($_POST['berat']>5){
-                //     $ongkir = 5*$harga;            
-                // }
-                // else echo 'input salah';
     
-
-        }        
-    }
-
-    public function cekresi(){
-        var_dump($_POST);
-        die();
-
-        //Check for post
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            //Sanitize post data
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-            $data = [
-                'resi' => trim($_POST['resi']),
-            ];
-   
-                $cekresi = $this->model('Account_model')->cekresi($data);
-                //var_dump($cekresi);
-                //die();
-        }        
-    }
 }

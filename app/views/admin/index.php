@@ -103,31 +103,26 @@
                             <div class="input-group-text">Kg</div>
                             </div>
                         </div>
-                <div class="btn-box">
-                <?php if(is_null($ongkir) == false ){?>
-                    <?php foreach($ongkir as $o){
-                        if(is_null($o) == false):
-                        ?>
-                        <div class="input-group-text"><?= $o;?></div>
-                        <?php else : ?>
-                        <div class="input-group-text">Belum ada ongkirnya</div>
-                        <?php endif;?>
-                    <?php }?>
-                <?php }?>
-                <?php if(is_null($ongkir)==true){?>
-                <div class="input-group-text">Belum ada ongkirnya</div>
-                <?php }?>
+                <div class="btn-box"> 
+
+                    <?php
+                        if (is_null($ongkir) == true) :?>
+                            <div class="input-group-text" style="margin-bottom: 15px;">Silahkan pilih pengiriman mau kemana</div>
+                    <?php else :?>
+                            <div class="input-group-text" style="margin-bottom: 15px;">Tarif Ongkirnya adalah <?= $ongkir;?></div>
+                    <?php endif;?>
+                    
                     <button class="common-btn" type="submit" name="submit" id="submit">Cek Harga</button>
                 </div>
             </div>      
-            </form>
-        </div>
-        <div class="contact-right-col">
-            <h1>Track Resi</h1>
-            <form method="post" action="<?= BASEURL;?>/Account/cekresi">
-                <textarea placeholder="cth: 12345678" id="resi" name="resi"></textarea>
-                <p>Masukkan nomor resi Anda. Pisahkan dengan tanda koma (,).</p>
-                <div class="btn-box">
+        </form>
+    </div>
+    <div class="contact-right-col">
+        <h1>Track Resi</h1>
+        <form method="post" action="<?= BASEURL;?>/Admin/cekresiProses">
+            <textarea placeholder="cth: 12345678" id="resi" name="resi"></textarea>
+            <p>Masukkan nomor resi Anda. Pisahkan dengan tanda koma (,).</p>
+            <div class="btn-box">
                     <button class="common-btn" type="submit" name="submit" id="submit">Lacak</button>
                 </div>
             </form>
