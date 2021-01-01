@@ -2,8 +2,14 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
+        <?php Flasher::flash();?>
           <form method="post" action="<?= BASEURL;?>/Account/checkingLogin" class="sign-in-form">
             <h2 class="title">Sign in</h2>
+            <?php
+              if(isset($_GET['error'])){
+                echo "<p>" . $_GET['error'] . "</p>";
+              }
+            ?>
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="text" id="username" name="username" placeholder="Username" />
@@ -96,5 +102,6 @@
         </div>
       </div>
     </div>
+    
 
    

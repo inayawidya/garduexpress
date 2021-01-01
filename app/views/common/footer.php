@@ -44,10 +44,10 @@
 <!--social-icons-->
 
 <div class="social-icons">
-    <img src="<?= BASEURL;?>/images/facebook.png">
-    <img src="<?= BASEURL;?>/images/instagram.png">
-    <img src="<?= BASEURL;?>/images/twitter.png">
-    <img src="<?= BASEURL;?>/images/linkedin.png">
+<a href="https://www.facebook.com"><img src="<?= BASEURL;?>/images/facebook.png"></a>
+<a href="https://www.instagram.com"><img src="<?= BASEURL;?>/images/instagram.png"></a>
+<a href="https://twitter.com"><img src="<?= BASEURL;?>/images/twitter.png"></a>
+<a href="http://www.linkedin.com"><img src="<?= BASEURL;?>/images/linkedin.png"></a>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>

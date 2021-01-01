@@ -38,11 +38,36 @@ class Account_model extends Database {
        
    }
 
-   public function checkUsername($username){
+    public function checkUsername($username){
        $q = "SELECT username FROM user WHERE username = '$username'";
        $this->db->query($q);
        return $this->db->single();
-
    }
 
+   public function cektarif($data){
+    //var_dump($data);
+    //die();
+    $asal = $data['asal'];
+    $tujuan = $data['tujuan'];
+    $berat = $data['berat'];
+    //$this->db->query("SELECT asal, tujuan, berat FROM cektarif WHERE asal ='$asal' AND tujuan = '$tujuan' AND berat = '$berat'");
+    $this->db->query("SELECT * FROM cektarif WHERE asal ='$asal' AND tujuan = '$tujuan' AND berat = '$berat'");
+    return $this->db->resultSet();
+}
+    public function cekresi($data){
+    //var_dump($data);
+    //die();
+    $resi = $data['resi'];
+    $this->db->query("SELECT * FROM cekresi WHERE resi ='$resi'");
+    return $this->db->resultSet();
+}
+   /*function checktarif(){
+       $thequery = "SELECT * FROM cektarif";
+       $res = $this->db->query($thequery);
+       return $res->result_array();
+   }
+   function ($){
+       $ = $this->input->post(id_cektarif);
+       
+   */
 }

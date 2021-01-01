@@ -63,8 +63,22 @@
               <div class="contact-center">
               <h1 style ="text-align:center;">Cek Tarif</h1>
                 <form style ="margin-left: auto; margin-right: auto;">
-                <input type="text" placeholder="Pilih Asal">
-                <input type="text" placeholder="Pilih Tujuan">
+                <select class="form-control" id="exampleFormControlSelect1">
+                <option selected>Asal</option>
+                <option>Gresik</option>
+                <option>Surabaya</option>
+                <option>Jakarta</option>
+                <option>Bekasi</option>
+                </select>
+                <select class="form-control" id="exampleFormControlSelect2">
+                <option selected>Tujuan</option>
+                <option>Bandung</option>
+                <option>Semarang</option>
+                <option>Aceh</option>
+                <option>Jakarta</option>
+                </select>
+                <!--<input type="text" placeholder="Pilih Asal">-->
+                <!--<input type="text" placeholder="Pilih Tujuan">-->
                         <div class="input-group mb-2 mr-sm-2">
                             <input type="text" class="form-control" placeholder="Berat">
                             <div class="input-group-prepend">

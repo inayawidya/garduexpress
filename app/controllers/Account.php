@@ -46,7 +46,9 @@ class Account extends Controller
             //die();
             //Check if all errors are empty
             if (empty($data['usernameError']) && empty($data['passwordError'])) {
+                
                 $loggedInUser = $this->model('Account_model')->login($data['username'], $data['password']);
+
                 //$id_user = $this->accountModel->getIDUser($username);
                 //var_dump($id_user);
                 //die();
@@ -57,19 +59,21 @@ class Account extends Controller
                     //$this->logout($loggedInUser);
                 } else {
                     $data['passwordError'] = 'Password or username is incorrect. Please try again.';
-                    $this->view('admin/login');
+                    $this->redirect("admin", "login");
                     }
             }
 
-        } else {
-            $data = [
-                'username' => '',
-                'password' => '',
-                'usernameError' => '',
-                'passwordError' => ''
-            ];
-        }
-        //$this->view('common/login');
+            else {
+                $data = [
+                    'username' => '',
+                    'password' => '',
+                    'usernameError' => '',
+                    'passwordError' => ''
+                ];
+                $this->redirect("admin", "login");
+            }
+
+        } 
     }
     public function createAccount(){
         $userData = [
@@ -129,11 +133,11 @@ class Account extends Controller
         
         if($_SESSION['role'] == 1){
 
-            $this->redirect("pelanggan", "index");
+            $this->redirect("admin", "index");
 
         }else {
 
-            $this->redirect("Admin", "index");
+            $this->redirect("pelanggan", "index");
         }
       
     }
@@ -145,5 +149,43 @@ class Account extends Controller
         $this->redirect("Admin", "Index");
     }
 
+    public function cektarif(){
+        //var_dump($_POST);
+        //die();
 
+        //Check for post
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //Sanitize post data
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $data = [
+                'asal' => trim($_POST['asal']),
+                'tujuan' => trim($_POST['tujuan']),
+                'berat' => trim($_POST['berat'])
+            ];
+   
+                $cektarif = $this->model('Account_model')->cektarif($data);
+                var_dump($cektarif);
+                die();
+        }        
+    }
+
+    public function cekresi(){
+        var_dump($_POST);
+        die();
+
+        //Check for post
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //Sanitize post data
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $data = [
+                'resi' => trim($_POST['resi']),
+            ];
+   
+                $cekresi = $this->model('Account_model')->cekresi($data);
+                //var_dump($cekresi);
+                //die();
+        }        
+    }
 }

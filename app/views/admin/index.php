@@ -82,27 +82,40 @@
     <div class="container contact-row">
         <div class="contact-left-col">
             <h1>Cek Tarif</h1>
-            <form>
-                <input type="text" placeholder="Pilih Asal">
-                <input type="text" placeholder="Pilih Tujuan">
+            <form method="post" action="<?= BASEURL;?>/Account/cektarif">
+            <div class="form-group">
+                <!--<input type="text" class="form-control"placeholder="Pilih Asal">-->
+                <select class="form-control" id="asal" name="asal">
+                <option selected >Asal</option>
+                <option value="Jakarta">Jakarta</option>
+                <option value="surabaya">Surabaya</option>
+                <option value="Gresik">Gresik</option>
+                </select>
+                <select class="form-control" id="tujuan" name="tujuan">
+                <option selected>Tujuan</option>
+                <option value="Surabaya">Surabaya</option>
+                <option value="Lamongan">Lamongan</option>          
+                </select>
+                <!--<input type="text" placeholder="Pilih Tujuan">--> 
                         <div class="input-group mb-2 mr-sm-2">
-                            <input type="text" class="form-control" placeholder="Berat">
+                            <input type="text" class="form-control" placeholder="Berat" id="berat" name="berat">
                             <div class="input-group-prepend">
                             <div class="input-group-text">Kg</div>
                             </div>
                         </div>
                 <div class="btn-box">
-                    <button class="common-btn">Cek Harga</button>
+                    <button class="common-btn" type="submit" name="submit" id="submit">Cek Harga</button>
                 </div>
+            </div>      
             </form>
         </div>
         <div class="contact-right-col">
             <h1>Track Resi</h1>
-            <form>
-                <textarea placeholder="cth: 12345678"></textarea>
-                <p>Masukkan nomor resi Anda. Pisahkan dengan tanda koma (,)Dapat memeriksa hingga 10 resi.</p>
+            <form method="post" action="<?= BASEURL;?>/Account/cekresi">
+                <textarea placeholder="cth: 12345678" id="resi" name="resi"></textarea>
+                <p>Masukkan nomor resi Anda. Pisahkan dengan tanda koma (,).</p>
                 <div class="btn-box">
-                    <button class="common-btn">Lacak</button>
+                    <button class="common-btn" type="submit" name="submit" id="submit">Lacak</button>
                 </div>
             </form>
         </div>
