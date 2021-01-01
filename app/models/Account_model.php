@@ -51,7 +51,7 @@ class Account_model extends Database {
     $tujuan = $data['tujuan'];
     $berat = $data['berat'];
     //$this->db->query("SELECT asal, tujuan, berat FROM cektarif WHERE asal ='$asal' AND tujuan = '$tujuan' AND berat = '$berat'");
-    $this->db->query("SELECT * FROM cektarif WHERE asal ='$asal' AND tujuan = '$tujuan' AND berat = '$berat'");
+    $this->db->query("SELECT harga FROM cektarif WHERE asal ='$asal' AND tujuan = '$tujuan' AND berat = '$berat'");
     return $this->db->resultSet();
 }
     public function cekresi($data){

@@ -165,8 +165,32 @@ class Account extends Controller
             ];
    
                 $cektarif = $this->model('Account_model')->cektarif($data);
-                var_dump($cektarif);
-                die();
+                // var_dump($cektarif[0]['harga']);
+                // die();
+                $harga = $cektarif[0]['harga'];
+                $this->redirect("Admin", "index", $harga);
+                // if ($_POST['berat']==1) {
+                //     $ongkir = 1*$harga;
+                //     $this->redirect("Admin", "index", $ongkir);
+                // }
+                // elseif ($_POST['berat']==2){
+                //     $ongkir = 2*$harga;
+                // }
+                // elseif ($_POST['berat']==3){
+                //     $ongkir = 3*$harga;
+                // }
+                // elseif ($_POST['berat']==4){
+                //     $ongkir = 4*$harga;
+                // }
+                // elseif ($_POST['berat']==5){
+                //     $ongkir = 5*$harga;
+                // }
+                // elseif ($_POST['berat']>5){
+                //     $ongkir = 5*$harga;            
+                // }
+                // else echo 'input salah';
+    
+
         }        
     }
 
