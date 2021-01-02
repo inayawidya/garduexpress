@@ -87,14 +87,35 @@
                 <!--<input type="text" class="form-control"placeholder="Pilih Asal">-->
                 <select class="form-control" id="asal" name="asal">
                 <option selected >Asal</option>
-                <option value="Jakarta">Jakarta</option>
-                <option value="surabaya">Surabaya</option>
+                <option value="Bandung">Bandung</option>
+                <option value="Bali">Bali</option>
+                <option value="Bekasi">Bekasi</option>
+                <option value="Bogor">Bogor</option>
                 <option value="Gresik">Gresik</option>
+                <option value="Jakarta">Jakarta</option>
+                <option value="Lamongan">Lamongan</option>
+                <option value="surabaya">Surabaya</option>
+                <option value="Semarang">Semarang</option>
+                <option value="Sidoarjo">Sidoarjo</option>
+                <option value="Yogyakarta">Yogyakarta</option>             
+                <option value="Malang">Malang</option>
+                <option value="Magelang">Magelang</option>
                 </select>
                 <select class="form-control" id="tujuan" name="tujuan">
                 <option selected>Tujuan</option>
-                <option value="Surabaya">Surabaya</option>
-                <option value="Lamongan">Lamongan</option>          
+                <option value="Bandung">Bandung</option>
+                <option value="Bali">Bali</option>
+                <option value="Bekasi">Bekasi</option>
+                <option value="Bogor">Bogor</option>
+                <option value="Gresik">Gresik</option>
+                <option value="Jakarta">Jakarta</option>
+                <option value="Lamongan">Lamongan</option>
+                <option value="surabaya">Surabaya</option>
+                <option value="Semarang">Semarang</option>
+                <option value="Sidoarjo">Sidoarjo</option>
+                <option value="Yogyakarta">Yogyakarta</option>             
+                <option value="Malang">Malang</option>
+                <option value="Magelang">Magelang</option>        
                 </select>
                 <!--<input type="text" placeholder="Pilih Tujuan">--> 
                         <div class="input-group mb-2 mr-sm-2">

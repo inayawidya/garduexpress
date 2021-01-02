@@ -78,7 +78,9 @@ p {
 }
 
 .navbar {
+    display: flex;
     background-image: linear-gradient(to right, #FF6702, #E54818);
+    justify-content: space-around;
     padding: 0 !important;
 }
 
@@ -89,7 +91,6 @@ p {
     border-style: border-box;
 }
 
-
 .navbar-nav li {
     padding: 0 20px;
 }
@@ -98,6 +99,10 @@ p {
     color: #fff !important;
     font-weight: 600;
 }
+
+/* responsive*/
+/*ukuran tablet*/
+@media screen and (max-width: 768px){}*/
 
 /*----about----*/
 #about {

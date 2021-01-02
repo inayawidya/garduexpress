@@ -13,10 +13,13 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="<?= BASEURL;?>/images/logo3.png" class="logo">
+                <img src="<?= BASEURL;?>/images/logo3.png" width="100" height="250" class="d-inline-block align-top">
             </a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ml-auto">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto" id="navbarSupportedContentList">
                 <li class="nav-item">
                   <a class="nav-link" href="<?= BASEURL;?>/admin/index">HOME</a>
                 </li>
